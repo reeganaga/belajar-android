@@ -62,6 +62,16 @@ fun main(args: Array<String>) {
     }while (e<20)
 
 
+    var user = User1("rega",22);
+    println(user.name)
+    println(user.age)
+
+    var userlagi = User2();
+    userlagi.name = "Budi"
+    userlagi.age = 19
+
+    println(userlagi.name)
+    println(userlagi.age)
 
 }
 
