@@ -2,98 +2,55 @@
 *
 * */
 
-//fun calculator(angka1:Float,angka2:Float){
-//    println ("$angka1 + $angka2 = "+ (angka1+angka2))
-//    println("$angka1 - $angka2 = "+ (angka1-angka2))
-//    println ("$angka1 : $angka2 = "+ (angka1/angka2))
-//    println ("$angka1 x $angka2 = "+ (angka1*angka2))
-//}
-//fun main(args: Array<String>){
-//    calculator(2.0f,4.0f)
-//
-//}
-
 fun main(args: Array<String>) {
-//    var a: String? = null
-//    if (a.isNullOrEmpty()) {
-//        println(a)
-//    }
-//    var b = if (null == a) "bilangan null" else "bukan null"
-//    println(b)
-//
-//
-//    var c = 8
-//    when {
-//        c % 3 == 0 -> print("habis dibagi 3")
-//        else -> {
-//            println("tidak habis dibagi 3")
-//        }
-//    }
-//
-//    //for
-//    var d = 10
-//    for (i in 0..d) {
-//        println(i)
-//    }
-//    println("----")
-//    for (i in 0 until d) {
-//        println(i)
-//    }
-//    println("----")
-//    for (i in d downTo 0) {
-//        println(i)
-//    }
-//
-//    val test_array = arrayOf(1, 2, 3, 4, "test", false)
-//    for (i in test_array) { // i : Int ==> memaksakan nilai yang di array bernilai integer
-//        println(i)
-//    }
-//
-////    while
-//    var e = 10
-//    while (e < 100) {
-//        println(e);
-//        e += 10;
-//    }
-//    e=0
-//    do {
-//        println(e)
-//        e++
-//    }while (e<20)
-//
-//
-//    var user = User1("rega",22);
-//    println(user.name)
-//    println(user.age)
-//
-//    var userlagi = User2();
-//    userlagi.name = "Budi"
-//    userlagi.age = 19
-//
-//    println(userlagi.name)
-//    println(userlagi.age)
 
-    val listOfItems: List<Any> = listOf(1, 2, 3, 4) //tidak immutable, tidak bisa diedit
+    val mutableListUser = mutableListOf<User>() //mutable, bisa dianti
 
-    val mutableListOfItems: MutableList<Any> = mutableListOf(1, 2, 3, 4) //mutable, bisa dianti
-    val mutableListOfItems= mutableListOf(1, 2, 3, 4) //mutable, bisa dianti
+    var testHashMap = HashMap<String,Int>()
 
+    testHashMap["rega"]=21
+    testHashMap["ika"]=19
+    testHashMap["agil"]=22
+    testHashMap["andi"]=30
 
-//  val mutableList= arrayOf()
-
-    val arrayOfItem = arrayOf(1, 2, 3, 4)
-
-//    var user = User1()
-
-    val mutableListUser = mutableListOf<User1>() //mutable, bisa dianti
-
-    mutableListUser.add(User1("Rega", 21))
-    mutableListUser.add(User1("Ika", 20))
-    mutableListUser.add(User1("Agil", 19))
-    var searhing = mutableListUser.find {
-        it.name == "Rega"
+    var sortedHasMap = testHashMap.toList().sortedBy {
+        it.first
     }
-    println(searhing?.age);
+    sortedHasMap.forEach(){
+        println("${it.first} => ${it.second}")
+    }
+
+    var listbiasa = listOf(10,3,50,4,44,3,22,1,22,3,5,5)
+
+    var sorted = listbiasa.sortedBy { it }
+
+    sorted.forEach(){
+        print("$it ")
+    }
+    println("====")
+
+    mutableListUser.add(User("Rega", 100))
+    mutableListUser.add(User("Ika", 50))
+    mutableListUser.add(User("Agil", 90))
+    mutableListUser.add(User("Budi", 90))
+    mutableListUser.add(User("Andi", 90))
+    mutableListUser.add(User("Andi", 90))
+
+    var sorting = mutableListUser.sortedBy {
+        it.age
+    }
+
+    sorting.forEach(){
+        println("${it.name} = ${it.age} ")
+    }
+
+//    sorting
+    var filtering = mutableListUser.find {
+        it.age < 100
+    }
+    println(filtering?.age);
+
+
 
 
 }
