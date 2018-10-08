@@ -1,8 +1,12 @@
-open class Animal {
-    var legs : Int = 0
-    var skin : String = ""
+abstract class Animal {
+    var legs: Int = 0
+    var alatNafas: String = ""
 
-    fun printLegs(){
-        println("kaki nya ada = $legs")
+    open fun printLegs() {
+        "kaki hewan = $legs"
+    }
+
+    open fun printAlatNafas() {
+        "alat nafas hewan = $alatNafas"
     }
 }
